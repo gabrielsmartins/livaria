@@ -112,7 +112,15 @@
 						</td>
 						<td class="numeric-cell">${carrinho.getTotal(item) }</td>
 						<td class="remove-item">
-							<form action="" method="POST">
+						
+						 
+						<c:url value="carrinho/remove" var="remover" >
+							<c:param name="produtoId" value="${item.produto.id}" />
+							<c:param name="tipoPreco" value="${item.tipoPreco}" />
+						</c:url>
+						
+						
+							<form action="${remover}" method="POST">
 								<input type="image" src="${contextPath }/resources/imagens/excluir.png" 
 									alt="Excluir" title="Excluir" />
 							</form>	
@@ -122,7 +130,12 @@
 			</tbody>
 			      <tfoot>
 			        <tr>
-			          <td colspan="3"><input type="submit" class="checkout" name="checkout" value="Finalizar compra" /></td>
+			          <td colspan="3">
+			          <form action="<c:url value='/pagamento/finalizar'/>" method="POST">
+			             <input type="submit" class="checkout" name="checkout" value="Finalizar compra" />
+			          </form>
+			          
+			          </td>
 			          <td class="quantity-input-cell"><input type="submit" class="update-cart" disabled="disabled" name="update" value=""/></td>
 			          <td class="numeric-cell">${carrinho.total}</td><td></td>
 			        </tr>

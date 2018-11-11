@@ -25,12 +25,20 @@ public class CarrinhoController {
 	@Autowired
 	private Carrinho carrinho;
 	
+	
+	
 	@RequestMapping("/add")
 	public ModelAndView add(Integer produtoId, TipoPreco tipoPreco ) {
 		ModelAndView modelAndView = new ModelAndView("redirect:/carrinho");
 		CarrinhoItem carrinhoItem = criaItem(produtoId,tipoPreco);
 		carrinho.add(carrinhoItem);
 		return modelAndView;
+	}
+	
+	@RequestMapping("/remove")
+	public ModelAndView remover(Integer produtoId, TipoPreco tipoPreco ) {
+		carrinho.remover(produtoId, tipoPreco);
+		return  new ModelAndView("redirect:/carrinho");
 	}
 
 	@RequestMapping(method=RequestMethod.GET)
