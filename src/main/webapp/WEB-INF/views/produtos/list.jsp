@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://www.springframework.org/security/tags"
+	prefix="security"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,12 +32,29 @@
 					role="button" data-toggle="dropdown" aria-haspopup="true"
 					aria-expanded="false"> Produtos </a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="${contextPath}produtos">Consultar Produtos</a> <a
-							class="dropdown-item" href="${contextPath}produtos/form">Cadastrar Produtos</a>
-					</div>
-				</li>
+						<a class="dropdown-item" href="${contextPath}produtos">Consultar
+							Produtos</a> <a class="dropdown-item"
+							href="${contextPath}produtos/form">Cadastrar Produtos</a>
+					</div></li>
+
+
+			</ul>
+
+
+			<ul class="navbar-nav my-2 my-md-0">
+				<li class="nav-item dropdown mt-2 mt-md-0"><a
+					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> <security:authentication
+							property="principal" var="usuario" /> Usuário :
+						${usuario.username }
+				</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Logout</a>
+					</div></li>
 			</ul>
 		</div>
+
 	</nav>
 
 
