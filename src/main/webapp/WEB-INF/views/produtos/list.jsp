@@ -50,7 +50,7 @@
 						${usuario.username }
 				</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Logout</a>
+						<a class="dropdown-item" href="<c:url value='/logout' />">Logout</a>
 					</div></li>
 			</ul>
 		</div>
@@ -73,8 +73,7 @@
 			<tbody>
 				<c:forEach items="${produtos}" var="produto">
 					<tr>
-						<td><a
-							href="<c:url value='/produtos/detalhe/${produto.id}'/>">
+						<td><a href="<c:url value='/produtos/detalhe/${produto.id}'/>">
 								${produto.titulo} </a></td>
 						<td>${produto.descricao}</td>
 						<td>${produto.paginas}</td>
