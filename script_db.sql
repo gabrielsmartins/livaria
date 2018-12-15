@@ -1,3 +1,7 @@
+
+CREATE DATABASE IF NOT EXISTS casadocodigo;
+CREATE DATABASE IF NOT EXISTS casadocodigo_test;
+
 USE casadocodigo;
 
 insert into Role values ('ROLE_ADMIN');
