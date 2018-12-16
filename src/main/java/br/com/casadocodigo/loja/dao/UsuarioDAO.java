@@ -32,5 +32,9 @@ public class UsuarioDAO implements UserDetailsService {
 		return usuarios.get(0);
 	}
 
+	public void store(Usuario usuario) {
+		manager.persist(usuario);
+	}
+
 	
 }
