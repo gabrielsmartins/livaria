@@ -1,4 +1,4 @@
-package br.com.casadocodigo.loja.conf;
+package br.com.casadocodigo.test.loja.conf;
 
 import javax.sql.DataSource;
 

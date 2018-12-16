@@ -1,4 +1,4 @@
-package br.com.casadocodigo.loja.dao;
+package br.com.casadocodigo.test.loja.dao;
 
 import static org.junit.Assert.*;
 
@@ -13,11 +13,12 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.casadocodigo.loja.builder.ProdutoBuilder;
-import br.com.casadocodigo.loja.conf.DataSourceConfigurationTest;
 import br.com.casadocodigo.loja.conf.JPAConfiguration;
+import br.com.casadocodigo.loja.dao.ProdutoDAO;
 import br.com.casadocodigo.loja.model.Produto;
 import br.com.casadocodigo.loja.model.TipoPreco;
+import br.com.casadocodigo.test.loja.builder.ProdutoBuilder;
+import br.com.casadocodigo.test.loja.conf.DataSourceConfigurationTest;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
