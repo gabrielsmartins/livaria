@@ -27,7 +27,7 @@ public class ProdutoDAO {
 	}
 
 	public List<Produto> list() {
-		TypedQuery<Produto> query = manager.createQuery("select p from Produto p",Produto.class);
+		TypedQuery<Produto> query = manager.createQuery("select distinct(p) from Produto p join fetch p.precos",Produto.class);
 		return query.getResultList();
 	}
 

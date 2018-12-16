@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
 	
 <tags:pageTemplate titulo="Seu Carrinho de Compras">	
@@ -44,10 +45,10 @@
 						</c:url>
 						
 						
-							<form action="${remover}" method="POST">
+							<form:form action="${remover}" method="POST">
 								<input type="image" src="${contextPath }/resources/imagens/excluir.png" 
 									alt="Excluir" title="Excluir" />
-							</form>	
+							</form:form>	
 						</td>
 					</tr>
 				</c:forEach>
@@ -55,9 +56,10 @@
 			      <tfoot>
 			        <tr>
 			          <td colspan="3">
-			          <form action="<c:url value='/pagamento/finalizar'/>" method="POST">
+			          <c:url var="finalizar" value='/pagamento/finalizar'/>
+			          <form:form action="${finalizar}" method="POST">
 			             <input type="submit" class="checkout" name="checkout" value="Finalizar compra" />
-			          </form>
+			          </form:form>
 			          
 			          </td>
 			          <td class="quantity-input-cell"><input type="submit" class="update-cart" disabled="disabled" name="update" value=""/></td>
